@@ -13,5 +13,5 @@ mkdir Lib
 ./python -m pip download requests beautifulsoup4 -d Lib
 for whl in Lib/*.whl; do unzip "$whl" -d Lib/; done
 
-./autocosmo.sh network_details.py
+./autocosmo.sh ./network_details.py
 ./network_details

@@ -26,6 +26,7 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 # next up
 - [x] download and pack dependencies (`pip download [package-name]`)[*]
 - [x] fully document python dependency packing
+- [ ] seems like the ./ before the .py filename is required for the ref to work. add it if it's missing?
 - [ ] automate python dependency download and packaging
 - [ ] extract dependencies from .py file & inject import redirect (do I need to modify the source code or can this be injected without modifying the code? is there a way to just change the global location or something like that?)
 - [ ] try for a gui? [run http server](https://github.com/jart/cosmopolitan/issues/35#issuecomment-773209579) ([redbean](https://redbean.dev/)) and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime? ([cosmo git discussion](https://github.com/jart/cosmopolitan/issues/35)), [OpenGL implementation](https://github.com/jacereda/cosmogfx)
@@ -137,7 +138,7 @@ mkdir Lib
 ./python -m pip download requests beautifulsoup4 -d Lib
 for whl in Lib/*.whl; do unzip "$whl" -d Lib/; done
 
-./autocosmo.sh network_details.py
+./autocosmo.sh ./network_details.py
 ./network_details
 ```
 

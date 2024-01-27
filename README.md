@@ -23,7 +23,9 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
 
 # next up
-- [ ] download and pack dependencies (`pip download [package-name]`)
+- [x] download and pack dependencies (`pip download [package-name]`)[5]
+- [ ] fully document python dependency packing
+- [ ] automate python dependency download and packaging
 - [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
 
 more inspiration / depth:
@@ -50,3 +52,11 @@ One of the reasons why I love working with a lot of these old technologies, is t
 > If we focus on the subset of numbers all systems share in common, and compare it to their common ancestor, Bell System Five, we can see that few things about systems engineering have changed in the last 40 years at the binary level. Magnums are boring. Platforms can't break them without breaking themselves. Few people have proposed visions over the years on why UNIX numerology needs to change.
 
 > ^^ (https://justine.lol/ape.html)
+
+# [5] packing python dependencies
+1. I have a py script that needs beautiful soup. ran it through my cosmo builder and it is complaining about missing soup
+2. I tell pip to download soup to ./Lib
+3. I manually unzip the python wheels in place
+4. then insert a line before my soup import so it imports from a file path and not the pip cache
+5. pack all of that up into the zip/fat binary with the import path structure intact
+6. then it runs. wtf!?

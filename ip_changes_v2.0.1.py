@@ -1,9 +1,14 @@
-import re
-import time
+import os, sys, re, time
+from datetime import datetime, timedelta
+
+project_root = os.path.dirname(os.path.abspath(__file__))
+lib_path = os.path.join(project_root, 'Lib')
+sys.path.append(lib_path)
+
 import curses
 import requests
-import pytz
-from datetime import datetime, timedelta
+import pytz # replace this .. not needed https://stackoverflow.com/questions/64463898/regarding-the-pytz-module-and-the-time-module-in-python
+
 
 def draw_big_digit(stdscr, digit, y, x):
     digit_map = {

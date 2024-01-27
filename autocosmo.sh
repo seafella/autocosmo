@@ -5,8 +5,9 @@ set -eux
 FILENAME=$1
 
 PREV="$(pwd)"
-# DIR="$(mktemp -d)"
-DIR=./temp
+DIR="$(mktemp -d)"
+# uncomment the following line and create a `./temp` folder to test
+# DIR=./temp
 cp "$FILENAME" "$DIR"
 
 # Delete .args file if it exists and create a new one with specified content

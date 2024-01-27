@@ -125,10 +125,11 @@ One of the reasons why I love working with a lot of these old technologies, is t
 detail:
 
 ```
+if no wget on local download and use: https://cosmo.zip/pub/cosmos/bin/wget
+
 # auto:
-wget https://raw.githubusercontent.com/seafella/autocosmo/main/build_example_network_details.sh
-chmod +x build_example_network_details.sh
-./build_example_network_details.sh
+
+wget https://raw.githubusercontent.com/seafella/autocosmo/main/build_example_network_details.sh;chmod +x build_example_network_details.sh;./build_example_network_details.sh
 
 # manual:
 

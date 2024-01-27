@@ -125,6 +125,13 @@ One of the reasons why I love working with a lot of these old technologies, is t
 detail:
 
 ```
+# auto:
+wget https://raw.githubusercontent.com/seafella/autocosmo/main/build_example_network_details.sh
+chmod +x build_example_network_details.sh
+./build_example_network_details.sh
+
+# manual:
+
 wget https://cosmo.zip/pub/cosmos/bin/python
 wget https://cosmo.zip/pub/cosmos/bin/unzip
 wget https://raw.githubusercontent.com/seafella/autocosmo/main/autocosmo.sh

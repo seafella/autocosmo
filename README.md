@@ -23,13 +23,14 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
 - [also check out unison](https://www.unison-lang.org/)
 
-
 # next up
 - [x] download and pack dependencies (`pip download [package-name]`)[*]
 - [x] fully document python dependency packing
 - [ ] automate python dependency download and packaging
 - [ ] extract dependencies from .py file & inject import redirect (do I need to modify the source code or can this be injected without modifying the code? is there a way to just change the global location or something like that?)
 - [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
+- [ ] will this work as an effective reverse-engineering prevention that would even the exposure between distributing c-dervied binary and python-derived binaries? fire up ghidra and find out!!
+- [ ] what does this enable? combined with content addressable language features and a trust/verification mechanism to ensure the code you're running is the code you intend to be running this could enable some exciting distributed systems possibilities
 
 # testing - working
 - [x] test on my mac in a nix-shell with py dependencies installed

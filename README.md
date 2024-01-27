@@ -85,18 +85,27 @@ One of the reasons why I love working with a lot of these old technologies, is t
 > more: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."
 
 > [6] > POSIX even changed their rules about binary in shell scripts specifically to let us do it.
+
 > See https://austingroupbugs.net/view.php?id=1250 and https://austingroupbugs.net/view.php?id=1226
+
 ---
+
 > Kinda feels like they are super intelligent alien beings from another planet trying to save us from software bloat and fragmentation.
+
 > POSIX even changed their rules about binary in shell scripts specifically to let us do it.
+
 > [I don't know what to say.](https://news.ycombinator.com/item?id=38103124)
 
 > [7] speed! (& (what about (emacs)))
+
 > [The end result is that if you switch your Linux build process to use cosmocc instead of cc then the programs you build, e.g. Bash and Emacs, will just work on the command prompts of totally different platforms like Windows and MacOS, and when you run your programs there, it'll feel like you're on Linux. However portability isn't the only selling point. Cosmo Libc will make your software faster and use less memory too. For example, when I build Emacs using the cosmocc toolchain, Emacs thinks it's building for Linux. Then, when I run it on Windows:](https://news.ycombinator.com/item?id=38101995)
+
 > [It actually goes **2x** faster than the native WIN32 port that the Emacs authors wrote on their own. Cosmo Emacs loads my dotfiles in 1.2 seconds whereas GNU Emacs on Windows loads them in 2.3 seconds.](https://news.ycombinator.com/item?id=38101995)
 
 - [8] portable agents!
+
 > all so that the same binary runs on multiple operating systems, which isn’t actually very useful.
+
 > I like to mention my use case when this comes up: my log file viewer (https://lnav.org) uploads an agent to remote hosts in order to tail log files on that [host](https://lnav.org/2021/05/03/tailing-remote-files.html). While lnav itself is not built using cosmo, the agent is. So, it works on multiple OSs without having to compile and include multiple versions of the agent.
 (https://news.ycombinator.com/item?id=38109519)
 

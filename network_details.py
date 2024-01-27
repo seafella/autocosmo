@@ -1,12 +1,12 @@
 import sys, os
+project_root = os.path.dirname(os.path.abspath(__file__))
+lib_path = os.path.join(project_root, 'Lib')
+sys.path.append(lib_path)
+
 import subprocess
 import time
 from datetime import datetime
 from typing import Callable, Dict, List, Tuple
-
-project_root = os.path.dirname(os.path.abspath(__file__))
-lib_path = os.path.join(project_root, 'Lib')
-sys.path.append(lib_path)
 
 import requests
 from bs4 import BeautifulSoup

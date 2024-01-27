@@ -88,62 +88,6 @@ def draw_window(stdscr, current_ip, past_ips, ip_change_counter, changes_per_hou
 
     stdscr.refresh()
 
-
-#### draw window with counts 
-
-# def draw_header(stdscr, text, row):
-#     # Clear the row
-#     stdscr.clrtoeol()
-
-#     # Calculate the center of the row
-#     _, width = stdscr.getmaxyx()
-#     x = width // 2 - len(text) // 2
-
-#     # Add the text
-#     stdscr.addstr(row, x, text, curses.color_pair(1))
-
-# def draw_window(stdscr, current_ip, past_ips, ip_change_counter, changes_per_hour):
-#     # Clear the screen
-#     stdscr.clear()
-
-#     # Draw header
-#     draw_header(stdscr, "IP Address Change Tracker", 1)
-
-#     # Draw IP address information
-#     stdscr.addstr(3, 2, f"Current IP: {current_ip}", curses.color_pair(1))
-#     stdscr.addstr(4, 2, f"IP Change Counter: {ip_change_counter}", curses.color_pair(1))
-
-#     # Draw past IP addresses
-#     stdscr.addstr(6, 2, "Past IP Addresses:", curses.color_pair(1))
-#     for i, past_ip in enumerate(past_ips):
-#         stdscr.addstr(7 + i, 4, past_ip[:50], curses.color_pair(2))
-
-#     # Draw IP address changes per hour chart
-#     max_lines = 10
-#     chart_y = 7 + len(past_ips) + 2
-#     stdscr.addstr(chart_y, 2, "Changes per hour (last 48 hours):", curses.color_pair(1))
-#     chart_y += 1
-
-#     max_changes = max(changes_per_hour) if changes_per_hour else 0
-#     bar_width = 3
-
-#     for i, count in enumerate(changes_per_hour):
-#         bar_height = int((count / max_changes) * max_lines) if max_changes > 0 else 0
-#         bar_x = 4 + (i * (bar_width + 1))
-
-#         for j in range(bar_height):
-#             stdscr.addch(chart_y + max_lines - j, bar_x, '█', curses.color_pair(3))
-#             stdscr.addch(chart_y + max_lines - j, bar_x + 1, '█', curses.color_pair(3))
-#             stdscr.addch(chart_y + max_lines - j, bar_x + 2, '█', curses.color_pair(3))
-
-#         # Display counts below each bar
-#         count_str = str(count)
-#         for k, char in enumerate(count_str):
-#             stdscr.addch(chart_y + max_lines + k + 1, bar_x, char, curses.color_pair(3))
-
-#     stdscr.refresh()
-
-
 def main(stdscr, interval):
     curses.curs_set(0)  # Hide the cursor
 

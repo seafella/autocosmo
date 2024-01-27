@@ -11,8 +11,14 @@ make actually portable executables (APEs) that run on Linux, Mac, Windows, FreeB
 
 basically cosmo lets you run c code anywhere and you can build python to c. this project automates as much of the detail as possible
 
-## 😁
 
+
+
+
+
+
+
+-
 shout out to [scrapscript](https://scrapscript.com/) for the inspo and [cosmo.zip](https://cosmo.zip/) for the binaries
 
 [cosmopolitan project](https://github.com/jart/cosmopolitan?tab=readme-ov-file)

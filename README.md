@@ -60,3 +60,20 @@ One of the reasons why I love working with a lot of these old technologies, is t
 4. then insert a line before my soup import so it imports from a file path and not the pip cache
 5. pack all of that up into the zip/fat binary with the import path structure intact
 6. then it runs. wtf!?
+
+detail:
+
+```
+pip3 download requests -d Lib
+pip3 download beautifulsoup4 -d Lib
+
+cd Lib
+unzip requests-2.31.0-py3-none-any.whl
+unzip certifi-2023.11.17-py3-none-any.whl
+unzip ... (unzip every .whl file)
+
+cd ..
+./autocosmo.sh network_details.py
+
+./network_detail.com
+```

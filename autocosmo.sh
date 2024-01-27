@@ -37,9 +37,9 @@ cp -r "$PREV"/Lib ./Lib
 BASENAME=$(basename "$FILENAME" .py)
 cp "__pycache__/${BASENAME}."*.pyc "Lib/${BASENAME}.pyc"
 # cp style.css repl.html Lib
-cp python "${BASENAME}.com"
-./zip -r "${BASENAME}.com" Lib .args
+cp python "${BASENAME}"
+./zip -r "${BASENAME}" Lib .args
 cd "$PREV"
-cp "$DIR/${BASENAME}.com" .
+cp "$DIR/${BASENAME}" .
 echo "Testing..."
-./"${BASENAME}.com"
+./"${BASENAME}"

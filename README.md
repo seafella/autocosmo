@@ -3,6 +3,8 @@ make actually portable executables (APEs) that run on Linux, Mac, Windows, FreeB
 
 ## example usage
 
+- dependencies: `wget` maybe `python` with `pip`
+
 - sample script included that logs ip address changes in org format
 `./autocosmo.sh ./ip_changes_v2.0.1.py`
 
@@ -24,9 +26,22 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
 # next up
 - [x] download and pack dependencies (`pip download [package-name]`)[*]
-- [ ] fully document python dependency packing
+- [x] fully document python dependency packing
 - [ ] automate python dependency download and packaging
+- [ ] extract dependencies from .py file & inject import redirect (do I need to modify the source code or can this be injected without modifying the code? is there a way to just change the global location or something like that?)
 - [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
+
+# testing - working
+- [x] test on my mac in a nix-shell with py dependencies installed
+- [x] test on my mac in a nix-shell without py dependencies installed
+- [ ] test on jetson
+- [ ] test on raspberrypi
+- [ ] test on linux
+- [ ] test on x86 mac
+- [ ] test on windows
+- [ ] test on old mac
+- [ ] test on old windows
+- [ ] test on weird stuff as you come across it
 
 # more inspiration / depth:
 

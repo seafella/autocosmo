@@ -40,9 +40,9 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
   [That predefined mode is actually a friendly wrapper around a more generalized platform support system Cosmopolitan offers, which is called `-DSUPPORT_VECTOR` where you can define a bitset of specifically what platforms you want to be supported. Then dead code elimination takes care of the rest. The same concept also generally applies to microarchitecture support, where you can have as much or as little runtime dispatching as you want.](https://news.ycombinator.com/item?id=38106371)
 - [ ] what about GPUs?
-  - [no gpu but working toward it](https://github.com/trholding/llama2.c)
-  - [just a wrapper](https://llm.datasette.io/)
-  - [more discussion](https://news.ycombinator.com/item?id=38102843)
+- [no gpu but working toward it](https://github.com/trholding/llama2.c)
+- [just a wrapper](https://llm.datasette.io/)
+- [more discussion](https://news.ycombinator.com/item?id=38102843)
 - [ ] ["Installing CPython extensions like this is an unsolved problem, but I think there might be some interesting workarounds possible."](https://news.ycombinator.com/item?id=38103827)
 - [ ] something something nix ...
 

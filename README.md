@@ -28,9 +28,24 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 - [x] fully document python dependency packing
 - [ ] automate python dependency download and packaging
 - [ ] extract dependencies from .py file & inject import redirect (do I need to modify the source code or can this be injected without modifying the code? is there a way to just change the global location or something like that?)
-- [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
+- [ ] try for a gui? [run http server](https://github.com/jart/cosmopolitan/issues/35#issuecomment-773209579) ([redbean](https://redbean.dev/)) and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime? ([cosmo git discussion](https://github.com/jart/cosmopolitan/issues/35)), [OpenGL implementation](https://github.com/jacereda/cosmogfx)
 - [ ] will this work as an effective reverse-engineering prevention that would even the exposure between distributing c-dervied binary and python-derived binaries? fire up ghidra and find out!!
 - [ ] what does this enable? combined with content addressable language features and a trust/verification mechanism to ensure the code you're running is the code you intend to be running this could enable some exciting distributed systems possibilities
+- [ ] run on bare metal / bios / uefi
+[some discussion](https://github.com/jart/cosmopolitan/issues/12#issuecomment-783101313)
+- [ ] However portability isn't the only selling point. Cosmo Libc will make your software faster and use less memory too.
+[Search for `MODE=tinylinux` in the https://github.com/jart/cosmopolitan#getting-started section of the README. If you use that build mode, then hello world for x86 linux is only 8kb in size. It's very similar to what you'd expect from Musl Libc. All the Windows / BSD / Mac / BIOS stuff gets removed from the compilation.](https://news.ycombinator.com/item?id=38106371)
+[That predefined mode is actually a friendly wrapper around a more generalized platform support system Cosmopolitan offers, which is called `-DSUPPORT_VECTOR` where you can define a bitset of specifically what platforms you want to be supported. Then dead code elimination takes care of the rest. The same concept also generally applies to microarchitecture support, where you can have as much or as little runtime dispatching as you want.](https://news.ycombinator.com/item?id=38106371)
+- [ ] what about GPUs?
+[no gpu but working toward it](https://github.com/trholding/llama2.c)
+[just a wrapper](https://llm.datasette.io/)
+[more discussion](https://news.ycombinator.com/item?id=38102843)
+- [ ] ["Installing CPython extensions like this is an unsolved problem, but I think there might be some interesting workarounds possible."](https://news.ycombinator.com/item?id=38103827)
+- [ ] something something nix ...
+
+
+
+
 
 # testing - working
 - [x] test on my mac in a nix-shell with py dependencies installed
@@ -69,6 +84,23 @@ One of the reasons why I love working with a lot of these old technologies, is t
 
 > more: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."
 
+> [6] > POSIX even changed their rules about binary in shell scripts specifically to let us do it.
+> See https://austingroupbugs.net/view.php?id=1250 and https://austingroupbugs.net/view.php?id=1226
+---
+> Kinda feels like they are super intelligent alien beings from another planet trying to save us from software bloat and fragmentation.
+> POSIX even changed their rules about binary in shell scripts specifically to let us do it.
+> [I don't know what to say.](https://news.ycombinator.com/item?id=38103124)
+
+> [7] speed! (& (what about (emacs)))
+> [The end result is that if you switch your Linux build process to use cosmocc instead of cc then the programs you build, e.g. Bash and Emacs, will just work on the command prompts of totally different platforms like Windows and MacOS, and when you run your programs there, it'll feel like you're on Linux. However portability isn't the only selling point. Cosmo Libc will make your software faster and use less memory too. For example, when I build Emacs using the cosmocc toolchain, Emacs thinks it's building for Linux. Then, when I run it on Windows:](https://news.ycombinator.com/item?id=38101995)
+> [It actually goes **2x** faster than the native WIN32 port that the Emacs authors wrote on their own. Cosmo Emacs loads my dotfiles in 1.2 seconds whereas GNU Emacs on Windows loads them in 2.3 seconds.](https://news.ycombinator.com/item?id=38101995)
+
+- [8] portable agents!
+> all so that the same binary runs on multiple operating systems, which isn’t actually very useful.
+> I like to mention my use case when this comes up: my log file viewer (https://lnav.org) uploads an agent to remote hosts in order to tail log files on that [host](https://lnav.org/2021/05/03/tailing-remote-files.html). While lnav itself is not built using cosmo, the agent is. So, it works on multiple OSs without having to compile and include multiple versions of the agent.
+(https://news.ycombinator.com/item?id=38109519)
+
+
 # [*] packing python dependencies
 1. I have a py script that needs beautiful soup. ran it through my cosmo builder and it is complaining about missing soup
 2. I tell pip to download soup to ./Lib
@@ -80,16 +112,21 @@ One of the reasons why I love working with a lot of these old technologies, is t
 detail:
 
 ```
-pip3 download requests -d Lib
-pip3 download beautifulsoup4 -d Lib
+wget https://cosmo.zip/pub/cosmos/bin/python
+wget https://cosmo.zip/pub/cosmos/bin/unzip
+wget https://raw.githubusercontent.com/seafella/autocosmo/main/autocosmo.sh
+wget https://raw.githubusercontent.com/seafella/autocosmo/main/network_details.py
 
-cd Lib
-unzip requests-2.31.0-py3-none-any.whl
-unzip certifi-2023.11.17-py3-none-any.whl
-unzip ... (unzip every .whl file)
+chmod +x ./python
+chmod +x ./unzip
+chmod +x ./autocosmo.sh
 
-cd ..
+mkdir Lib
+./python -m pip download requests beautifulsoup4 -d Lib
+./unzip ./*.whl -d ./Lib
+
 ./autocosmo.sh network_details.py
-
-./network_detail.com
+./network_details
 ```
+
+^ [suggestions to improve this](https://news.ycombinator.com/item?id=38103827)

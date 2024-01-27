@@ -28,9 +28,10 @@ chmod +x zip
 ./python -m compileall "$FILENAME"
 mkdir Lib
 
-for whl in ./Lib/*.whl; do
-    unzip "$whl" -d Lib/
-done
+# unzip all .whl files
+# for whl in ./Lib/*.whl; do
+#     unzip "$whl" -d Lib/
+# done
 
 # if [ -f Lib ]; then
   # echo "Found Lib folder. Copying it..."

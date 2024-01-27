@@ -28,6 +28,10 @@ chmod +x zip
 ./python -m compileall "$FILENAME"
 mkdir Lib
 
+for whl in ./Lib/*.whl; do
+    unzip "$whl" -d Lib/
+done
+
 # if [ -f Lib ]; then
   # echo "Found Lib folder. Copying it..."
 cp -r "$PREV"/Lib ./Lib
@@ -37,9 +41,9 @@ cp -r "$PREV"/Lib ./Lib
 BASENAME=$(basename "$FILENAME" .py)
 cp "__pycache__/${BASENAME}."*.pyc "Lib/${BASENAME}.pyc"
 # cp style.css repl.html Lib
-cp python "${BASENAME}"
-./zip -r "${BASENAME}" Lib .args
+cp python "${BASENAME}.com"
+./zip -r "${BASENAME}.com" Lib .args
 cd "$PREV"
-cp "$DIR/${BASENAME}" .
+cp "$DIR/${BASENAME}.com" .
 echo "Testing..."
-./"${BASENAME}"
+./"${BASENAME}.com"

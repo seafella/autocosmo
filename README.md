@@ -135,7 +135,7 @@ chmod +x ./autocosmo.sh
 
 mkdir Lib
 ./python -m pip download requests beautifulsoup4 -d Lib
-./unzip ./*.whl -d ./Lib
+for whl in Lib/*.whl; do unzip "$whl" -d Lib/; done
 
 ./autocosmo.sh network_details.py
 ./network_details

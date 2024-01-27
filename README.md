@@ -28,13 +28,9 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 - [ ] automate python dependency download and packaging
 - [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
 
-more inspiration / depth:
+# more inspiration / depth:
 
-the dream: ["Not just python scripts, you can package any C code as well. We've used it to compile up a "python.com" APE file with a python 3.11 interpreter that has lots of packages (including C extensions) that we can just drop straight into old airgapped lab instrument computers and get a modern python data analysis suite up and running."](https://news.ycombinator.com/item?id=39114248)
-
-the nightmare: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."
-
-# quotes & footnotes
+## quotes & footnotes
 
 > [1] "Cosmopolitan Libc makes C a build-once run-anywhere language, like Java, except it doesn't need an interpreter or virtual machine. Instead, it reconfigures stock GCC and Clang to output a POSIX-approved polyglot format that runs natively on Linux + Mac + Windows + FreeBSD + OpenBSD + NetBSD + BIOS with the best possible performance and the tiniest footprint imaginable."
 
@@ -60,3 +56,7 @@ One of the reasons why I love working with a lot of these old technologies, is t
 4. then insert a line before my soup import so it imports from a file path and not the pip cache
 5. pack all of that up into the zip/fat binary with the import path structure intact
 6. then it runs. wtf!?
+
+> [6] the dream: ["Not just python scripts, you can package any C code as well. We've used it to compile up a "python.com" APE file with a python 3.11 interpreter that has lots of packages (including C extensions) that we can just drop straight into old airgapped lab instrument computers and get a modern python data analysis suite up and running."](https://news.ycombinator.com/item?id=39114248)
+
+> more: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."

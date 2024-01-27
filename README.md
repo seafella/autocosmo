@@ -113,6 +113,16 @@ One of the reasons why I love working with a lot of these old technologies, is t
 > I like to mention my use case when this comes up: my log file viewer (https://lnav.org) uploads an agent to remote hosts in order to tail log files on that [host](https://lnav.org/2021/05/03/tailing-remote-files.html). While lnav itself is not built using cosmo, the agent is. So, it works on multiple OSs without having to compile and include multiple versions of the agent.
 (https://news.ycombinator.com/item?id=38109519)
 
+- [9] interesting uses
+    1. printvideo renders .mpg videos in the terminal
+    1. nesemu1 play nintendo games in the terminal
+    1. apelife conway's game of life tui + gui
+    1. memzoom process/file memory monitor
+    1. blinkenlights pc emulating visualizer debugger
+    1. printimage prints png/jpg files in the terminal
+    1. kilo antirez's famous text editor
+    https://github.com/jart/cosmopolitan/issues/35#issuecomment-770109680
+
 
 # [*] packing python dependencies
 1. I have a py script that needs beautiful soup. ran it through my cosmo builder and it is complaining about missing soup

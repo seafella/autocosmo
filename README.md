@@ -32,9 +32,12 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 - [ ] will this work as an effective reverse-engineering prevention that would even the exposure between distributing c-dervied binary and python-derived binaries? fire up ghidra and find out!!
 - [ ] what does this enable? combined with content addressable language features and a trust/verification mechanism to ensure the code you're running is the code you intend to be running this could enable some exciting distributed systems possibilities
 - [ ] run on bare metal / bios / uefi
+
 [some discussion](https://github.com/jart/cosmopolitan/issues/12#issuecomment-783101313)
 - [ ] However portability isn't the only selling point. Cosmo Libc will make your software faster and use less memory too.
+
 [Search for `MODE=tinylinux` in the https://github.com/jart/cosmopolitan#getting-started section of the README. If you use that build mode, then hello world for x86 linux is only 8kb in size. It's very similar to what you'd expect from Musl Libc. All the Windows / BSD / Mac / BIOS stuff gets removed from the compilation.](https://news.ycombinator.com/item?id=38106371)
+
 [That predefined mode is actually a friendly wrapper around a more generalized platform support system Cosmopolitan offers, which is called `-DSUPPORT_VECTOR` where you can define a bitset of specifically what platforms you want to be supported. Then dead code elimination takes care of the rest. The same concept also generally applies to microarchitecture support, where you can have as much or as little runtime dispatching as you want.](https://news.ycombinator.com/item?id=38106371)
 - [ ] what about GPUs?
 [no gpu but working toward it](https://github.com/trholding/llama2.c)

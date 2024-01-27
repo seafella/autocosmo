@@ -23,7 +23,7 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
 
 # next up
-- [x] download and pack dependencies (`pip download [package-name]`)[5]
+- [x] download and pack dependencies (`pip download [package-name]`)[*]
 - [ ] fully document python dependency packing
 - [ ] automate python dependency download and packaging
 - [ ] try for a gui? run http server and spawn browser? is it possible to package multi-platform qt and detect the platform at runtime?
@@ -49,14 +49,14 @@ One of the reasons why I love working with a lot of these old technologies, is t
 
 > ^^ (https://justine.lol/ape.html)
 
-# [5] packing python dependencies
+> [5] the dream: ["Not just python scripts, you can package any C code as well. We've used it to compile up a "python.com" APE file with a python 3.11 interpreter that has lots of packages (including C extensions) that we can just drop straight into old airgapped lab instrument computers and get a modern python data analysis suite up and running."](https://news.ycombinator.com/item?id=39114248)
+
+> more: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."
+
+# [*] packing python dependencies
 1. I have a py script that needs beautiful soup. ran it through my cosmo builder and it is complaining about missing soup
 2. I tell pip to download soup to ./Lib
 3. I manually unzip the python wheels in place
 4. then insert a line before my soup import so it imports from a file path and not the pip cache
 5. pack all of that up into the zip/fat binary with the import path structure intact
 6. then it runs. wtf!?
-
-> [6] the dream: ["Not just python scripts, you can package any C code as well. We've used it to compile up a "python.com" APE file with a python 3.11 interpreter that has lots of packages (including C extensions) that we can just drop straight into old airgapped lab instrument computers and get a modern python data analysis suite up and running."](https://news.ycombinator.com/item?id=39114248)
-
-> more: "Now we can combine this with the xlcalculator package and transpile models built in Excel right down to C code and build it as a portable executable."

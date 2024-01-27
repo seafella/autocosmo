@@ -121,7 +121,7 @@ One of the reasons why I love working with a lot of these old technologies, is t
     1. blinkenlights pc emulating visualizer debugger
     1. printimage prints png/jpg files in the terminal
     1. kilo antirez's famous text editor
-    https://github.com/jart/cosmopolitan/issues/35#issuecomment-770109680
+    - https://github.com/jart/cosmopolitan/issues/35#issuecomment-770109680
 
 
 # [*] packing python dependencies

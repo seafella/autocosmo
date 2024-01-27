@@ -18,7 +18,7 @@ basically cosmo lets you run c code anywhere and you can build python to c. this
 
 
 
--
+--
 shout out to [scrapscript](https://scrapscript.com/) for the inspo and [cosmo.zip](https://cosmo.zip/) for the binaries
 
 [cosmopolitan project](https://github.com/jart/cosmopolitan?tab=readme-ov-file)

@@ -28,13 +28,18 @@ chmod +x zip
 ./python -m compileall "$FILENAME"
 mkdir Lib
 
+# if [ -f Lib ]; then
+  # echo "Found Lib folder. Copying it..."
+cp -r "$PREV"/Lib ./Lib
+# fi
+
 # Extract the filename without the extension for use in the compiled filename
 BASENAME=$(basename "$FILENAME" .py)
 cp "__pycache__/${BASENAME}."*.pyc "Lib/${BASENAME}.pyc"
 # cp style.css repl.html Lib
 cp python "${BASENAME}.com"
 ./zip -r "${BASENAME}.com" Lib .args
-echo "Testing..."
-./"${BASENAME}.com"
 cd "$PREV"
 cp "$DIR/${BASENAME}.com" .
+echo "Testing..."
+./"${BASENAME}.com"

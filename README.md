@@ -1,3 +1,5 @@
+# this is working but also not working. packing up the py code & dependencies is not there yet
+
 # autocosmo
 make actually portable executables (APEs) that run on Linux, Mac, Windows, FreeBSD, OpenBSD, NetBSD, BIOS, and more on AMD64 and ARM64 architectures using cosmo.zip[1] with minimal effort
 
